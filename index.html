@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>webpage</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+   
+  <article class="wrapper">
+  <section class="component">
+    <h2 class="component__heading">IT'S AWESOME</h2>
+    <ul class="component__list">
+      <li class="component__list-item">
+        <ul class="bullets">
+  <li class="bullet">
+    <div class="bullet-icon bullet-icon-1">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png
+" alt="">
+    </div>
+    <div id="bullet-content">
+      <h2>This Bullet Title</h2>
+      <p>Lorem dolor sit amet consectetur adipisicing elit. Doloremque, minus, blanditiis, voluptatibus nulla quia ipsam sequi quos iusto aliquam iste magnam accusamus molestias quo illum impedit. Odit officia autem.</p>
+      </div>
+  </li>  
+  <li class="bullet">
+    <div class="bullet-icon bullet-icon-2">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt="">
+    </div>
+    <div id="bullet-content">
+      <h2>Another Bullet Title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, minus, blanditiis, voluptatibus nulla quia ipsam sequi quos iusto aliquam iste magnam accusamus molestias quo illum.</p>
+    </div>
+  </li>
+  <li class="bullet">
+    <div class="bullet-icon bullet-icon-3">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_4.png" alt="">
+    </div>
+    <div id="bullet-content">
+      <h2>Last Bullet Title</h2>
+      <p>Lorem ipsum sit amet consectetur adipisicing elit. Doloremque, minus, blanditiis, voluptatibus nulla quia ipsam sequi quos iusto aliquam iste magnam accusamus molestias quo illum impedit. Odit officia autem.</p>
+    </div>
+  </li> 
+</ul>
+
+   </li>
+    </ul>
+  </section>
+</article>
+
+  <section class="controls">
+  <button class="default" data-theme="default">Default</button>
+  <button class="facebook"  data-theme="banana">facebook </button>
+  <button class="youtube" data-theme="cherry" disabled>youtube</button>
+  <button class="in" data-theme="blueberry">in</button>
+  <button class="instagram" data-theme="leaf">instagram</button>
+  <button class="skype" data-theme="nightsky">skype</button>
+</section>
+
+
+
+<script src="jquery-2.1.3.min.js"></script>
+
+
+</script>
+<script>
+ (function(exports) {
+  var themeChanger = {
+    settings: {
+      wrapper: $('.wrapper'),
+      buttons: $('.controls > button')
+     
+    },
+    
+    init: function () {
+      var _self = this;
+      this.settings.buttons.on('click', function () {
+        var $node = $(this),
+            theme = $node.data('theme');
+        _self.settings.wrapper.removeClass().addClass('.wrapper ' + theme);
+
+        _self.settings.buttons.removeAttr('disabled');
+        $node.attr('disabled', true);
+      });
+    }
+  };
+  
+  themeChanger.init();
+}(window));
+ 
+
+</script>
+
+
+  </body>
+</html>
